@@ -8,7 +8,7 @@ import com.example.chatty.common.data.model.Message
 import kotlinx.coroutines.launch
 
 class ChatViewModel : ViewModel() {
-    val messagesRepository = MessagesRepository.build()
+    private val messagesRepository by lazy { MessagesRepository.build() }
 
     var messages = mutableStateListOf(
         Message("Alice", "Hi there!"),
